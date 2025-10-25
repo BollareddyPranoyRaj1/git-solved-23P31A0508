@@ -1,18 +1,20 @@
-# Production Application Configuration
+# Application Configuration
 application:
   name: DevOpsSimulator
-  version: 1.0.0
+  version: 2.0.0-beta
   environment: production
   
 server:
   host: 0.0.0.0
   port: 8080
   ssl_enabled: true
+  hot_reload: false
   
 logging:
   level: INFO
   format: json
   output: /var/log/app.log
+  show_stack_trace: false
   
 database:
   host: prod-db.example.com
@@ -23,3 +25,14 @@ features:
   auto_scaling: true
   load_balancer: enabled
   backup_enabled: true
+  experimental_features: false
+  
+development:
+  mock_external_apis: false
+  debug_mode: false
+  cors_enabled: true
+  
+notifications:
+  slack_webhook: "https://hooks.slack.com/services/XXX"
+  discord_webhook: "https://discord.com/api/webhooks/YYY"
+  email_alerts: true
