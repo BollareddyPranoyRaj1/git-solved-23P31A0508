@@ -2,6 +2,8 @@
 
 A comprehensive CI/CD configuration management tool for enterprise deployments.
 
+---
+
 ## Project Status
 **Version**: 2.0.0-beta  
 **Environment**: Production  
@@ -31,3 +33,24 @@ A comprehensive CI/CD configuration management tool for enterprise deployments.
 6. Monitor system health
 
 ## Development Setup
+- *See project documentation in `/docs` folder*
+
+---
+
+## ⚠️ Experimental Features (from conflict-simulator branch)
+
+**EXPERIMENTAL BUILD** - Advanced CI/CD configuration management with AI integration.
+
+**Version**: 3.0.0-experimental  
+**Environment**: Testing  
+**Maintainer**: DevOps Innovation Team
+
+### Cutting-Edge Features
+- 🤖 AI-powered deployment optimization
+- 🌐 Multi-cloud orchestration (AWS, Azure, GCP, DigitalOcean)
+- 📈 Predictive scaling with machine learning
+- 🔒 Zero-trust security architecture
+- 🌊 Event-driven architecture
+- 🎯 Chaos engineering tools
+
+### Quick Start - Advanced Mode

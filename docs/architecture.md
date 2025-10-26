@@ -1,71 +1,41 @@
-# System Architecture
+# System Architecture - Experimental Build
 
 ## Overview
-DevOps Simulator follows a microservices architecture designed for high availability and scalability.
+DevOps Simulator follows an **event-driven microservices architecture** with AI/ML integration, designed for multi-cloud deployments and chaos engineering.
 
-**Current Version**: Supports both production and development environments with experimental features in beta.
+**⚠️ EXPERIMENTAL**: This architecture includes untested cutting-edge features.
 
-## Components
+## Core Components
 
-### 1. Application Server
-- **Technology**: Node.js + Express
-- **Port**: 8080 (production), 3000 (development)
-- **Scaling**: Horizontal auto-scaling enabled (production), Manual single instance (development)
-- **Debug**: Chrome DevTools debugger on port 9229 (development only)
-- **Hot Reload**: Enabled in development mode
+### 1. Application Server (AI-Enhanced)
+- **Technology**: Node.js + Express + TensorFlow.js
+- **Port**: 9000 (main), 9001 (metrics), 9002 (AI API)
+- **Scaling**: AI-powered predictive auto-scaling
+- **Intelligence**: Real-time ML inference
+- **Message Queue**: Apache Kafka for event streaming
 
-### 2. Database Layer
-- **Database**: PostgreSQL 14
-- **Configuration**: 
-  - Production: Master-slave replication
-  - Development: Single local instance
-- **Backup**: Daily automated backups (production), Manual backups (development)
-- **Seeding**: Auto-seed with test data on startup (development only)
+### 2. Distributed Database Layer
+- **Primary**: PostgreSQL 14 cluster (5 nodes)
+- **Cache**: Redis cluster with ML-based cache optimization
+- **Configuration**: Multi-master replication
+- **Backup**: Continuous backup with geo-redundancy
+- **AI Features**: Query optimization, index suggestions
 
-### 3. Monitoring System
-- **Tool**: Prometheus + Grafana (production), Basic console logging + optional Prometheus (development)
-- **Metrics**: CPU, Memory, Disk, Network, Build time (dev only)
-- **Alerts**: Email notifications for critical issues (production), Console warnings (development)
-- **Dashboard**: Grafana dashboards (production), In-development web dashboard (beta)
+### 3. AI/ML Pipeline
+- **Framework**: TensorFlow, PyTorch, Scikit-learn
+- **Models**: 
+  - Anomaly detection (LSTM neural network)
+  - Load prediction (XGBoost)
+  - Auto-scaling optimizer (Reinforcement Learning)
+- **Training**: Continuous online learning
+- **Inference**: Real-time predictions (<50ms latency)
 
-### 4. Container Orchestration (NEW)
-- **Tool**: Docker Compose
-- **Services**: App, Database, Redis cache
-- **Volume Mounts**: Code directory for hot reload (development)
-- **Environment**: Local development, production-ready configuration available
+### 4. Multi-Cloud Orchestration
+- **Supported Clouds**: AWS, Azure, GCP, DigitalOcean
+- **Orchestrator**: Kubernetes with custom CRDs
+- **Load Balancing**: Global anycast with GeoDNS
+- **Failover**: Automatic cross-cloud failover
 
-### 5. Authentication System (NEW - Beta)
-- **Method**: OAuth2 + JWT
-- **Providers**: Google, GitHub (testing phase)
-- **Sessions**: Redis-based session storage
-
-## Deployment Strategy
-- **Production Method**: Rolling updates with zero-downtime
-- **Development Method**: Docker Compose hot reload
-- **Rollback**: Automated on failure (production), Git checkout previous commit (development)
-
-## Development Workflow
-1. Make code changes
-2. Auto-reload triggers rebuild
-3. Run unit tests
-4. Check console logs
-5. Commit when ready
-
-## Security
-### Production
-- SSL/TLS encryption enabled
-- Database connection encryption
-- Regular security audits
-- Restricted CORS policies
-
-### Development
-- SSL/TLS disabled for local development
-- Database credentials in plain text (dev only)
-- CORS enabled for all origins
-- Debug endpoints exposed (dev only)
-
-## Experimental Features
-⚠️ **Warning**: The following features are experimental and under active development:
-- Multi-cloud deployment support
-- AI-powered log analysis
-- Automatic rollback on anomaly detection
+### 5. Advanced Monitoring & Observability
+- **Metrics**: Prometheus + Thanos (long-term storage)
+- **Logs**: ELK Stack + AI log analysis
